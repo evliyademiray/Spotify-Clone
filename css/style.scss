@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  background: black;
+  color: white;
+  overflow: hidden;
+  font-family: "poppins";
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 15px;
+
+  #logo {
+    display: none;
+    width: 40px;
+  }
+
+  @media (max-width: 870px) {
+    #logo-text {
+      display: none;
+    }
+    #logo {
+      display: block;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    a {
+      padding: 20px 10px;
+      display: flex;
+      gap: 5px;
+      border-radius: 10px;
+      white-space: nowrap; //Yazıları tek satıra koyar
+      transition: all 0.3s;
+
+      @media (max-width: 870px) {
+        span {
+          display: none;
+        }
+        i {
+          font-size: 20px;
+        }
+      }
+
+      &:hover {
+        background: rgb(32, 32, 32);
+      }
+    }
+  }
+  img {
+    max-width: 130px;
+    object-fit: contain;
+  }
+}
+main {
+  width: 100%;
+}
+//Ana İçerik > üst kısım
+main header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 10px;
+
+  @media (max-width: 870px) {
+    justify-content: center;
+  }
+  form {
+    display: flex;
+    input {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+    button {
+      background: #1db954;
+      padding: 0 25px;
+      border: none;
+      cursor: pointer;
+      color: white;
+      border-radius: 0 5px 5px 0;
+      &:hover {
+        background: #0ff15e;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    @media (max-width: 870px) {
+      display: none;
+    }
+    li {
+      padding: 5px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 300ms;
+      &:hover {
+        background: rgb(60, 60, 60);
+      }
+    }
+  }
+}
+//Ana içerik > alt kısım
+main .songs {
+  background: rgb(42, 42, 42);
+  height: 100%;
+}
+
+main .songs #title{
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+main #list {
+  margin-top: 20px;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 80vh;
+  overflow-y: auto;
+  gap: 20px;
+
+  &::-webkit-scrollbar{
+    background: black;
+    border-radius: 15px;
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: #0e9c3f;
+    border-radius: 10px;
+    border: 3px solid #f0e50c;
+  }
+
+  @media(max-width:768px){
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .card {
+    width: 200px;
+    min-height: 280px;
+    height: fit-content;
+    padding: 15px;
+    background: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover .play{
+        opacity: 1;
+        bottom: 20px;
+    }
+
+    h4 {
+      margin-bottom: 6px;
+    }
+
+    figure {
+        position: relative;
+
+      img {
+        width: 100%;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+      .play {
+        position: absolute;
+        background: #1db954;
+        right: 10px;
+        bottom: 20px;
+        border-radius: 20px;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        font-size: 23px;
+        opacity: 0;//Görünmez olacak
+        bottom: -20px;
+        transition: all 0.3s;
+        &:hover{
+            background: #0e9c3f;
+            scale: 0.9;
+        }
+      }
+    }
+  }
+}
+//Oynatılan şarkı çubuğu
+.playing{
+  position: fixed;
+  border: 5px solid rgba(150, 194, 20, 0.933);
+  border-radius: 10px;
+  display: flex;
+  bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  z-index: 100;
+  padding: 10px 40px;
+  width: 100%;
+  background-color:  #3db44b97;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.599);
+
+  @media (max-width:768px){
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+   
+    img{
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+  audio{
+    width: 300px;
+  }
+}
+.animate{
+  animation: turn 5s linear infinite;
+}
+@keyframes turn{
+  from{
+transform: rotate(0);
+  }
+  to{
+transform: rotate(360deg);
+  }
+}
+.loader{
+  display: grid;
+  // place-items: center;
+  width: 100vh;
+  height: 100vw;
+}

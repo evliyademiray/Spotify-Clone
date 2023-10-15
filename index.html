@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <!-- Sol kısım -->
+    <aside>
+        <img id="logo-text" src="/images/Spotify.png"  >
+        <img id="logo" src="/images/no-text.png">
+        <nav>
+            <a href="/"><i class="bi bi-house-fill"></i><span>Anasayfa</span></a>
+            <a href="#"><i class="bi bi-search"></i><span>Arama</span></a>
+            <a href="#"><i class="bi bi-bookmark-fill"></i><span>Kütüphane</span></a>
+            <a href="#"><i class="bi bi-music-note-list"></i><span>Çalma Listeleri</span></a>
+            <a href="#"><i class="bi bi-heart-fill"></i><span>Beğenilen Şarkılar</span></a>
+        </nav>
+    </aside>
+    <!-- Ana İçerik -->
+    <main>
+        <header>
+            <form id="search-form">
+                <input placeholder="Şarkı ara" type="text" />
+                <button><i class="bi bi-search"></i></button>
+            </form>
+            <ul>
+                <li>Premium</li>
+                <li>Destek</li>
+                <li>İndirmeler</li>
+                <li>Kaydol</li>
+            </ul>
+        </header>
+        <div class="songs">
+            <h2 id="title">Türkiye'de en popüler şarkılar </h2>
+            <div id="list">
+            </div>
+        </div>
+    </main>
+    <!-- AKtif şarkı barı -->
+    <div class="playing">
+        <!-- <div class="info"> -->
+            <!-- <img class="animate"
+                src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/c4/b2/f2/c4b2f2ae-5122-d699-2191-d6b438ed199f/cover.jpg/400x400cc.jpg">
+            <div>
+                <p>Şuan Oynatılıyor</p>
+                <h3>Şarkı Adı</h3>
+            </div>
+            </div>
+        <audio controls>
+            <source
+                src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/d4/e0/62/d4e06297-2e33-fd65-40e0-3adc0978fd0c/mzaf_10564945943688861550.plus.aac.ep.m4a">
+        </audio> -->
+    </div>
+
+    <!-- JS bağlantı -->
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
